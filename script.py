@@ -1,6 +1,16 @@
 #!/usr/bin/python
 import traceback
 import sys
+import httplib
+
+def search(query = "", category = "", returns = 5):
+    api_key = open("nzbmatrix.key", "r").readline()
+    base_url = "https://api.nzbmatrix.com/v1.1/search.php?\
+user=herpthederp&\
+apikey=" + api_key + "\
+&search=" + query + "\
+    conn = httplib.HTTPSConnection("nzbmatrix.com")
+
 
 commands = {'derp': 'I\'m derping!', 'fuckoff': 'I has a sad nao... :('}
 try:
